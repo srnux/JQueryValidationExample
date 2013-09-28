@@ -1,0 +1,29 @@
+﻿@model JqueryValidation.Models.SampleModel
+@{
+    ViewBag.Title = "jQuery validation example";
+}
+
+<div class="content-wrapper leftHalfContentHolder">
+    <h3>First form</h3>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { enctype = "multipart/form-data", id="formHome" }))
+    {
+        <fieldset>
+            <legend>First form</legend>
+            <div>@Html.LabelFor(p=>p.Url) @Html.TextBoxFor(p=>p.Url) </div>
+            <div>@Html.LabelFor(p=>p.Username) @Html.TextBoxFor(p=>p.Username) </div>
+            <div>@Html.LabelFor(p=>p.SaveToFolder) @Html.TextBoxFor(p=>p.SaveToFolder) </div>
+            <input type="submit" value="Save" id="save" />
+        </fieldset>
+    }
+</div>
+<div class="content-wrapper rightHalfContentHolder">
+    <h3>Second form</h3>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get, new {enctype = "multipart/form-data", id = "formHomeAlter"}))
+    {
+        <fieldset>
+            <legend>Second form</legend>
+            <div>@Html.LabelFor(p=>p.Url) @Html.TextBoxFor(p=>p.Url) </div>
+            <input type="submit" value="Save" id="saveAlter" />
+        </fieldset>
+    }  
+</div>
